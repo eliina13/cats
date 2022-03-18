@@ -1,4 +1,21 @@
 body 
 {
-    background: rgb(185, 233, 252);
+    background: url(att.jpg);
+}
+.wrapper
+{
+    background: rgb(210, 226, 250);
+    width: 500px;
+    height: 500px;
+    border: 2px solid crimson;
+    padding: 10px;
+    margin: auto;
+}
+.chataZinas
+{
+    background: rgb(241, 213, 239);
+    height: 450px;
+    color: rgb(228, 3, 48);
+    padding: 10px;
+    overflow: scroll;
 }
