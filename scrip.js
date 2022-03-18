@@ -1,3 +1,5 @@
+//console.log(3)
+
 const API = 'https://cataaplikacija.eliina13.repl.co'
 
 let zina = document.querySelector('.manaZina');
