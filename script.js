@@ -8,7 +8,8 @@ function sutittZinu(){
     console.log('Sutiīt ziņu()darbojas');
    zinas.innerHTML = zinas.innerHTML + '<br/>'+ zina.value ;
    
-fetch(API + '/sutit/'+vards.value'/'+ zina.value)
+
+   fetch(API+'/sutit/'+vards.value+'/'+zina.value)
 }
 
 async function ieladetChataZinas(){
@@ -16,4 +17,10 @@ async function ieladetChataZinas(){
     let dati =await datiNoServera.text();
     zinas.innerHTML = dati;
 }
-setInterval(ieladetChataZinas, 1000)
+//setInterval(ieladetChataZinas, 1000)
+
+async function ieladetChataZinasJson(){
+    let datiNoServera = await fetch(API + '/lasit');
+    let dati =await datiNoServera.json();
+    console.log(await dati)
+}
