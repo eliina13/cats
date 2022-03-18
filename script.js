@@ -6,6 +6,8 @@ let zinas= document.querySelector('.chataZinas');
 function sutittZinu(){
     console.log('Sutiīt ziņu()darbojas');
    zinas.innerHTML = zinas.innerHTML + '<br/>'+ zina.value ;
+   
+fetch(API + '/sutit/Juris/'+ zina.value)
 }
 
 async function ieladetChataZinas(){
