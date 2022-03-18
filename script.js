@@ -1,26 +1,42 @@
 const API = 'https://cataaplikacija.eliina13.repl.co'
 
 let zina = document.querySelector('.manaZina');
-let zinas= document.querySelector('.chataZinas');
-let vards = document.querySelector ('.vards');
+let zinas = document.querySelector('.chataZinas');
+let vards = document.querySelector('.vards');
 
-function sutittZinu(){
-    console.log('Sutiīt ziņu()darbojas');
-   zinas.innerHTML = zinas.innerHTML + '<br/>'+ zina.value ;
-   
 
-   fetch(API+'/sutit/'+vards.value+'/'+zina.value)
+function sutitZinu()
+{
+    console.log('sutitZinu() darbojas');
+
+    zinas.innerHTML = zinas.innerHTML + '<br />' + zina.value;
+
+    fetch(API+'/sutit/'+vards.value+'/'+zina.value)
 }
 
-async function ieladetChataZinas(){
+async function ieladetChataZinas()
+{
     let datiNoServera = await fetch(API + '/lasit');
-    let dati =await datiNoServera.text();
+    let dati = await datiNoServera.text();
     zinas.innerHTML = dati;
 }
-//setInterval(ieladetChataZinas, 1000)
 
-async function ieladetChataZinasJson(){
+//setInterval( ieladetChataZinas, 1000 )
+
+async function ieladetChataZinasJson()
+{
     let datiNoServera = await fetch(API + '/lasit');
-    let dati =await datiNoServera.json();
-    console.log(await dati)
-}
+    let dati = await datiNoServera.json();
+    
+    //console.log(await dati[0]['zina'] )
+    zinas.innerHTML = '';
+    
+    i = 0;
+    while ( i < await dati.length )
+    {
+        console.log(i);
+        zinas.innerHTML = zinas.innerHTML+dati[i]['vards']+': '+dati[i]['zina']+'<br />';
+
+        i = i+1;
+    }
+}//beidzas ieladetChataZinasJson()
