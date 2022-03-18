@@ -1,6 +1,10 @@
 //console.log(3)
+<<<<<<< HEAD
 const API = 'https://cataaplikacija.eliina13.repl.co'
 
+=======
+const API = 'https://cataaplikacija.eliina13.repl.co/'
+>>>>>>> c67416f1230bf932b3243644dee422e8a48fe9c5
 let zina = document.querySelector('.manaZina');
 let zinas= document.querySelector('.chataZinas');
 
